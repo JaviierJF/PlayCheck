@@ -1,0 +1,119 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #4A90E2, #50E3C2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #333;
+}
+
+/* Nombre de la aplicación */
+.app-name {
+    font-size: 36px;
+    color: #ffffff;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Contenedor de registro */
+.register-container {
+    width: 350px;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.register-container h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+/* Etiquetas y campos del formulario */
+.register-container label {
+    display: block;
+    margin-bottom: 5px;
+    text-align: left;
+    font-size: 14px;
+    color: #666;
+}
+
+.register-container input[type="text"],
+.register-container input[type="password"],
+.register-container input[type="email"],
+.register-container input[type="date"] {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.register-container input[type="text"]:focus,
+.register-container input[type="password"]:focus,
+.register-container input[type="email"]:focus,
+.register-container input[type="date"]:focus {
+    border-color: #4A90E2;
+    outline: none;
+}
+
+/* Botón de registro */
+.register-container button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #4A90E2;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s;
+}
+
+.register-container button[type="submit"]:hover {
+    background-color: #357ABD;
+}
+
+/* Mensajes de error */
+.error-message {
+    color: #E74C3C;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+/* Botón de volver al login */
+.back-button {
+    display: inline-block;
+    width: 100%;
+    padding: 12px;
+    background-color: #50E3C2;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.back-button:hover {
+    background-color: #3CB39D;
+}

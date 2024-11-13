@@ -1,0 +1,135 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+*/
+/* 
+    Created on : 12 nov 2024, 19:32:22
+    Author     : Javier
+*/
+/* Estilos generales */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f4f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #333;
+}
+
+/* Contenedor principal */
+.container {
+    background-color: #fff;
+    padding: 25px 30px;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+}
+
+h2 {
+    font-size: 24px;
+    color: #4A90E2;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* Mensaje de error */
+.error {
+    color: #e74c3c;
+    font-size: 14px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Estilos de cada grupo de formulario */
+.form-group {
+    margin-bottom: 18px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 6px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="url"],
+select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #333;
+    background-color: #f9f9f9;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+input:focus,
+select:focus {
+    border-color: #4A90E2;
+    outline: none;
+}
+
+/* Botones */
+.btn-save {
+    background-color: #4A90E2;
+    color: #fff;
+    border: none;
+    padding: 12px 0;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.btn-save:hover {
+    background-color: #3a78b5;
+}
+
+.btn-cancel {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    color: #4A90E2;
+    font-size: 14px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.btn-cancel:hover {
+    color: #2c5f91;
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 480px) {
+    .container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    .btn-save {
+        font-size: 15px;
+    }
+
+    .btn-cancel {
+        font-size: 13px;
+    }
+}
+
