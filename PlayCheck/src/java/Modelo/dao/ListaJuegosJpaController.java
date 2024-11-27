@@ -16,6 +16,8 @@ import Modelo.dao.exceptions.NonexistentEntityException;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.NoResultException;
+import javax.persistence.TypedQuery;
 
 /**
  *
@@ -193,4 +195,19 @@ public class ListaJuegosJpaController implements Serializable {
         }
     }
     
+    public ListaJuegos findListaJuegosByVideojuegoId(Videojuego juegoId) {
+        EntityManager em = getEntityManager();
+        try {
+
+            TypedQuery<ListaJuegos> query = em.createQuery("SELECT l FROM ListaJuegos l where l.juegoId = :juegoId", ListaJuegos.class);
+            query.setParameter("juegoId", juegoId);
+            // Ejecutar la consulta y devolver los resultados
+            return query.getSingleResult();
+        } catch (NoResultException e) {
+            return null;
+        } finally {
+            em.close();
+        }
+    }
+
 }

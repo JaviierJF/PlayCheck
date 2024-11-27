@@ -41,7 +41,7 @@ public class HomePage extends HttpServlet {
             BufferedReader reader = null;
 
             try {
-                // Obtener los juegos en tendencia
+                // Obtener los juegos en tendencia(Se puede ordenar por: name, released, added, created, updated, rating, metacritic)
                 URL urlTrending = new URL(API_URL + "?key=" + API_KEY + "&page_size=12&ordering=+rating");
                 connection = (HttpURLConnection) urlTrending.openConnection();
                 connection.setRequestMethod("GET");
@@ -64,9 +64,10 @@ public class HomePage extends HttpServlet {
                     for (int i = 0; i < results.length(); i++) {
                         JSONObject gameJson = results.getJSONObject(i);
                         Videojuego game = new Videojuego();
+                        game.setJuegoId(gameJson.getInt("id"));
                         game.setNombre(gameJson.getString("name"));
                         game.setFechaLanzamiento(convertirStringAFecha(gameJson.getString("released")));
-                        game.setImagenUrl(gameJson.getString("background_image"));
+                        game.setImagenUrl(gameJson.getString("background_image"));                      
                         trendingGames.add(game);
                     }
 
@@ -83,8 +84,8 @@ public class HomePage extends HttpServlet {
                 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd"); //Máscara de la fecha
                 String oneYearAgoStr = oneYearAgo.format(formatter); //Transformamos la fecha en string para usarlo en la url
 
-                // Obtener los próximos juegos del próximo año
-                URL urlNew = new URL(API_URL + "?key=" + API_KEY + "&page_size=12&ordering=-released&dates=" + oneYearAgoStr + ",2025-12-31");
+                // Obtener los próximos juegos del próximo año(Se puede ordenar por: name, released, added, created, updated, rating, metacritic)
+                URL urlNew = new URL(API_URL + "?key=" + API_KEY + "&page_size=12&ordering=-released&dates=" + oneYearAgoStr + ",2025-09-01");
                 connection = (HttpURLConnection) urlNew.openConnection();
                 connection.setRequestMethod("GET");
 
@@ -106,6 +107,7 @@ public class HomePage extends HttpServlet {
                     for (int i = 0; i < resultsNew.length(); i++) {
                         JSONObject gameJson = resultsNew.getJSONObject(i);
                         Videojuego game = new Videojuego();
+                        game.setJuegoId(gameJson.getInt("id"));
                         game.setNombre(gameJson.getString("name"));
                         game.setFechaLanzamiento(convertirStringAFecha(gameJson.getString("released")));
 

@@ -16,6 +16,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
@@ -38,6 +40,8 @@ public class ListaJuegos implements Serializable {
     @Column(name = "lista_id")
     private Integer listaId;
     @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 100)
     @Column(name = "estado")
     private String estado;
     @JoinColumn(name = "user_id", referencedColumnName = "user_id")

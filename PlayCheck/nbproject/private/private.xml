@@ -3,14 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Javier/Documents/NetBeansProjects/PlayCheck/src/java/Controlador/admin/CrearUsuario.java</file>
-            <file>file:/C:/Users/Javier/Documents/NetBeansProjects/PlayCheck/web/assets/css/editarUsuario.css</file>
+            <file>file:/C:/Users/Javier/Documents/NetBeansProjects/PlayCheck/src/java/Controlador/Usuario/AgregarJuegoLista.java</file>
             <file>file:/C:/Users/Javier/Documents/NetBeansProjects/PlayCheck/src/java/Controlador/HomePage.java</file>
-            <file>file:/C:/Users/Javier/Documents/NetBeansProjects/PlayCheck/src/java/Controlador/admin/EditarUsuario.java</file>
-            <file>file:/C:/Users/Javier/Documents/NetBeansProjects/PlayCheck/web/admin/crearUsuario.jsp</file>
-            <file>file:/C:/Users/Javier/Documents/NetBeansProjects/PlayCheck/web/registro.jsp</file>
-            <file>file:/C:/Users/Javier/Documents/NetBeansProjects/PlayCheck/web/assets/css/menuUsuario.css</file>
-            <file>file:/C:/Users/Javier/Documents/NetBeansProjects/PlayCheck/web/assets/css/crearUsuario.css</file>
+            <file>file:/C:/Users/Javier/Documents/NetBeansProjects/PlayCheck/web/assets/css/detalleJuego.css</file>
+            <file>file:/C:/Users/Javier/Documents/NetBeansProjects/PlayCheck/src/java/Controlador/DetalleJuego.java</file>
+            <file>file:/C:/Users/Javier/Documents/NetBeansProjects/PlayCheck/src/java/Modelo/dao/VideojuegoJpaController.java</file>
+            <file>file:/C:/Users/Javier/Documents/NetBeansProjects/PlayCheck/src/java/Controlador/Registro.java</file>
+            <file>file:/C:/Users/Javier/Documents/NetBeansProjects/PlayCheck/src/java/Modelo/Entidades/ListaJuegos.java</file>
+            <file>file:/C:/Users/Javier/Documents/NetBeansProjects/PlayCheck/src/java/Controlador/Usuario/Perfil.java</file>
+            <file>file:/C:/Users/Javier/Documents/NetBeansProjects/PlayCheck/web/homepage.jsp</file>
+            <file>file:/C:/Users/Javier/Documents/NetBeansProjects/PlayCheck/web/detalleJuego.jsp</file>
+            <file>file:/C:/Users/Javier/Documents/NetBeansProjects/PlayCheck/src/java/Modelo/dao/ListaJuegosJpaController.java</file>
         </group>
     </open-files>
 </project-private>

@@ -20,6 +20,8 @@ import Modelo.dao.exceptions.NonexistentEntityException;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.NoResultException;
+import javax.persistence.TypedQuery;
 
 /**
  *
@@ -313,6 +315,23 @@ public class VideojuegoJpaController implements Serializable {
             em.close();
         }
     }
+    
+    public Videojuego findVideojuegoByNombre(String nombre) {
+        EntityManager em = getEntityManager();
+        try {
+
+            TypedQuery<Videojuego> query = em.createQuery("SELECT v FROM Videojuego v where v.nombre = :nombre", Videojuego.class);
+            query.setParameter("nombre", nombre);
+            // Ejecutar la consulta y devolver los resultados
+            return query.getSingleResult();
+        } catch (NoResultException e) {
+            return null;
+        } finally {
+            em.close();
+        }
+    }
+
+
 
     public int getVideojuegoCount() {
         EntityManager em = getEntityManager();

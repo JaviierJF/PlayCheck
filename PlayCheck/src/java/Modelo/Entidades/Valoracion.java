@@ -19,6 +19,7 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
@@ -42,9 +43,11 @@ public class Valoracion implements Serializable {
     @Column(name = "valoracion_id")
     private Integer valoracionId;
     @Basic(optional = false)
+    @NotNull
     @Column(name = "puntuacion")
     private short puntuacion;
     @Basic(optional = false)
+    @NotNull
     @Column(name = "fecha")
     @Temporal(TemporalType.DATE)
     private Date fecha;

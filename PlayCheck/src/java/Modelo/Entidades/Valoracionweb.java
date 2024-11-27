@@ -20,6 +20,8 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
@@ -45,9 +47,11 @@ public class Valoracionweb implements Serializable {
     @Column(name = "puntuacion")
     private Integer puntuacion;
     @Lob
+    @Size(max = 65535)
     @Column(name = "comentario")
     private String comentario;
     @Basic(optional = false)
+    @NotNull
     @Column(name = "fecha_valoracion")
     @Temporal(TemporalType.DATE)
     private Date fechaValoracion;

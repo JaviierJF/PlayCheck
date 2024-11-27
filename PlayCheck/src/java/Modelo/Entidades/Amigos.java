@@ -19,6 +19,7 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
@@ -41,6 +42,7 @@ public class Amigos implements Serializable {
     @Column(name = "amigo_id")
     private Integer amigoId;
     @Basic(optional = false)
+    @NotNull
     @Column(name = "fecha_amistad")
     @Temporal(TemporalType.DATE)
     private Date fechaAmistad;

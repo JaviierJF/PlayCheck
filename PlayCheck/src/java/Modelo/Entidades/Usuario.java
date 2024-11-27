@@ -23,6 +23,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
@@ -52,24 +54,35 @@ public class Usuario implements Serializable {
     @Column(name = "user_id")
     private Integer userId;
     @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 50)
     @Column(name = "username")
     private String username;
+    // @Pattern(regexp="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?", message="Invalid email")//if the field contains email address consider using this annotation to enforce field validation
     @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 100)
     @Column(name = "email")
     private String email;
     @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 255)
     @Column(name = "password")
     private String password;
     @Basic(optional = false)
+    @NotNull
     @Column(name = "fecha_nacimiento")
     @Temporal(TemporalType.DATE)
     private Date fechaNacimiento;
     @Basic(optional = false)
+    @NotNull
     @Column(name = "fecha_registro")
     @Temporal(TemporalType.DATE)
     private Date fechaRegistro;
+    @Size(max = 255)
     @Column(name = "avatar_url")
     private String avatarUrl;
+    @Size(max = 100)
     @Column(name = "rol")
     private String rol;
     @OneToMany(mappedBy = "userId")
@@ -229,8 +242,7 @@ public class Usuario implements Serializable {
     public void setListaJuegosCollection(Collection<ListaJuegos> listaJuegosCollection) {
         this.listaJuegosCollection = listaJuegosCollection;
     }
-    
-    // Función de hash MD5
+
     public static String getMD5(String input) {
         try {
             MessageDigest md = MessageDigest.getInstance("MD5");
@@ -242,6 +254,7 @@ public class Usuario implements Serializable {
         }
     }
 
+    
     @Override
     public int hashCode() {
         int hash = 0;
