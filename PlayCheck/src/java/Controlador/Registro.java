@@ -77,7 +77,7 @@ public class Registro extends HttpServlet {
                 Modelo.Entidades.Usuario u = new Modelo.Entidades.Usuario();
                 u.setUsername(username);
                 u.setEmail(email);
-                u.setPassword(Modelo.Entidades.Usuario.getMD5(username));
+                u.setPassword(password);
                 u.setFechaNacimiento(fechaNacimiento);
                 u.setFechaRegistro(fechaRegistro);
                 u.setAvatarUrl(avatarUrl);

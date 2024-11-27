@@ -1,0 +1,98 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+*/
+/* 
+    Created on : 24 nov 2024, 17:53:26
+    Author     : Javier
+*/
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #4A90E2, #50E3C2);
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #4A90E2;
+}
+
+.profile-options {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.profile-options button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #4A90E2;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.profile-options button:hover {
+    background-color: #357ABD;
+}
+
+.form-section {
+    display: none;
+    padding: 20px;
+}
+
+.form-section h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    color: #4A90E2;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+input[type="text"], input[type="email"], input[type="password"], input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button[type="submit"] {
+    padding: 10px 20px;
+    border: none;
+    background-color: #4A90E2;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #357ABD;
+}
+
+.image-preview {
+    display: block;
+    margin: 10px auto;
+    max-width: 150px;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+}
+

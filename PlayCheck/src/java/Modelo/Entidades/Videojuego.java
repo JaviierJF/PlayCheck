@@ -23,6 +23,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
@@ -39,34 +41,50 @@ import javax.xml.bind.annotation.XmlTransient;
     @NamedQuery(name = "Videojuego.findByNombre", query = "SELECT v FROM Videojuego v WHERE v.nombre = :nombre"),
     @NamedQuery(name = "Videojuego.findByDesarrollador", query = "SELECT v FROM Videojuego v WHERE v.desarrollador = :desarrollador"),
     @NamedQuery(name = "Videojuego.findByGenero", query = "SELECT v FROM Videojuego v WHERE v.genero = :genero"),
-    @NamedQuery(name = "Videojuego.findByImagenJuego", query = "SELECT v FROM Videojuego v WHERE v.imagenJuego = :imagenJuego"),
     @NamedQuery(name = "Videojuego.findByFechaLanzamiento", query = "SELECT v FROM Videojuego v WHERE v.fechaLanzamiento = :fechaLanzamiento"),
-    @NamedQuery(name = "Videojuego.findByImagenUrl", query = "SELECT v FROM Videojuego v WHERE v.imagenUrl = :imagenUrl")})
+    @NamedQuery(name = "Videojuego.findByImagenUrl", query = "SELECT v FROM Videojuego v WHERE v.imagenUrl = :imagenUrl"),
+    @NamedQuery(name = "Videojuego.findByMetacritic", query = "SELECT v FROM Videojuego v WHERE v.metacritic = :metacritic"),
+    @NamedQuery(name = "Videojuego.findByEnlaceCompra", query = "SELECT v FROM Videojuego v WHERE v.enlaceCompra = :enlaceCompra"),
+    @NamedQuery(name = "Videojuego.findByEtiquetas", query = "SELECT v FROM Videojuego v WHERE v.etiquetas = :etiquetas")})
 public class Videojuego implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
     @Column(name = "juego_id")
     private Integer juegoId;
     @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 100)
     @Column(name = "nombre")
     private String nombre;
+    @Size(max = 100)
     @Column(name = "desarrollador")
     private String desarrollador;
+    @Size(max = 50)
     @Column(name = "genero")
     private String genero;
-    @Column(name = "imagen_juego")
-    private String imagenJuego;
     @Column(name = "fecha_lanzamiento")
     @Temporal(TemporalType.DATE)
     private Date fechaLanzamiento;
     @Lob
+    @Size(max = 65535)
     @Column(name = "descripcion")
     private String descripcion;
-    @Column(name = "imagen_url")
+    @Size(max = 255)
+    @Column(name = "imagenUrl")
     private String imagenUrl;
+    @Size(max = 255)
+    @Column(name = "metacritic")
+    private String metacritic;
+    @Lob
+    @Size(max = 65535)
+    @Column(name = "enlaceCompra")
+    private String enlaceCompra;
+    @Lob
+    @Size(max = 65535)
+    @Column(name = "etiquetas")
+    private String etiquetas;
     @JoinTable(name = "videojuego_genero", joinColumns = {
         @JoinColumn(name = "juego_id", referencedColumnName = "juego_id")}, inverseJoinColumns = {
         @JoinColumn(name = "genero_id", referencedColumnName = "genero_id")})
@@ -123,14 +141,6 @@ public class Videojuego implements Serializable {
         this.genero = genero;
     }
 
-    public String getImagenJuego() {
-        return imagenJuego;
-    }
-
-    public void setImagenJuego(String imagenJuego) {
-        this.imagenJuego = imagenJuego;
-    }
-
     public Date getFechaLanzamiento() {
         return fechaLanzamiento;
     }
@@ -153,6 +163,30 @@ public class Videojuego implements Serializable {
 
     public void setImagenUrl(String imagenUrl) {
         this.imagenUrl = imagenUrl;
+    }
+
+    public String getMetacritic() {
+        return metacritic;
+    }
+
+    public void setMetacritic(String metacritic) {
+        this.metacritic = metacritic;
+    }
+
+    public String getEnlaceCompra() {
+        return enlaceCompra;
+    }
+
+    public void setEnlaceCompra(String enlaceCompra) {
+        this.enlaceCompra = enlaceCompra;
+    }
+
+    public String getEtiquetas() {
+        return etiquetas;
+    }
+
+    public void setEtiquetas(String etiquetas) {
+        this.etiquetas = etiquetas;
     }
 
     @XmlTransient

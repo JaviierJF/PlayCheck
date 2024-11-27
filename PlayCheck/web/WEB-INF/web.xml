@@ -32,6 +32,22 @@
         <servlet-name>EditarUsuario</servlet-name>
         <servlet-class>Controlador.admin.EditarUsuario</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>DetalleJuego</servlet-name>
+        <servlet-class>Controlador.DetalleJuego</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Perfil</servlet-name>
+        <servlet-class>Controlador.Usuario.Perfil</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RecargarUsuario</servlet-name>
+        <servlet-class>Controlador.Usuario.RecargarUsuario</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AgregarJuegoLista</servlet-name>
+        <servlet-class>Controlador.Usuario.AgregarJuegoLista</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Registro</servlet-name>
         <url-pattern>/Registro</url-pattern>
@@ -63,6 +79,22 @@
     <servlet-mapping>
         <servlet-name>EditarUsuario</servlet-name>
         <url-pattern>/EditarUsuario</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DetalleJuego</servlet-name>
+        <url-pattern>/DetalleJuego</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Perfil</servlet-name>
+        <url-pattern>/Perfil</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RecargarUsuario</servlet-name>
+        <url-pattern>/RecargarUsuario</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AgregarJuegoLista</servlet-name>
+        <url-pattern>/AgregarJuegoLista</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

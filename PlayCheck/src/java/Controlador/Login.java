@@ -44,8 +44,8 @@ public class Login extends HttpServlet {
        
        if(username != null && password != null){
                
-       //Codificamos la contraseña
-       password = getMD5(password);
+//       //Codificamos la contraseña
+//       password = getMD5(password);
        
        EntityManagerFactory emf = Persistence.createEntityManagerFactory("PlayCheckPU");
        UsuarioJpaController ujc = new UsuarioJpaController(emf);

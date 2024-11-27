@@ -5,7 +5,6 @@
 package Controlador.admin;
 
 import Modelo.Entidades.Usuario;
-import static Modelo.Entidades.Usuario_.fechaNacimiento;
 import Modelo.dao.UsuarioJpaController;
 import java.io.IOException;
 import java.io.PrintWriter;
